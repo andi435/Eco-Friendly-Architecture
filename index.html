@@ -10,6 +10,49 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<style>
+			/* Basic styling for alternating service layout */
+			#services {
+				margin: 3em 0;
+			}
+			.service {
+				display: flex;
+				align-items: center;
+				margin-bottom: 2em;
+			}
+			.service.left-image .service-image {
+				order: 0;
+				margin-right: 1em;
+			}
+			.service.left-image .service-text {
+				order: 1;
+			}
+			.service.right-image .service-image {
+				order: 1;
+				margin-left: 1em;
+			}
+			.service.right-image .service-text {
+				order: 0;
+			}
+			.service-image img {
+				max-width: 300px;
+				height: auto;
+				border-radius: 5px;
+			}
+			.service-text {
+				flex: 1;
+			}
+			@media (max-width: 768px) {
+				.service {
+					flex-direction: column;
+				}
+				.service.left-image .service-image,
+				.service.right-image .service-image {
+					order: 0;
+					margin: 0 0 1em 0;
+				}
+			}
+		</style>
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
 	<body class="is-preload">
@@ -55,25 +98,49 @@
 						<p>Optimize your environmental impact and reduce your energy bills, with our expertise in Grasshopper, Revit, and Rhino 7.0.</p>
 					</header>
 
-					<!-- Services Section -->
+					<!-- Services Section with Alternating Images -->
 					<section id="services">
 						<h2>Our Services</h2>
-						<article>
-							<h3>Energy Cost Reduction Strategy</h3>
-							<p>We develop comprehensive strategies to minimize energy costs for new constructions and renovations. Our process begins with an in-depth consultation to understand your specific energy needs. If necessary, we analyze sensor data to gain deeper insights. Based on this information, we create a tailored strategy that outlines effective methods to significantly reduce your energy consumption and costs.</p>
-						</article>
-						<article>
-							<h3>Sustainable Architectural Design and 3D Drafting</h3>
-							<p>Our team specializes in creating environmentally conscious designs that significantly reduce energy consumption and carbon footprints. We integrate sustainable materials and innovative design strategies to help you build spaces that are both beautiful and eco-friendly. Our services include detailed 3D drafting, ensuring precise and accurate representations of your sustainable building projects.</p>
-						</article>
-						<article>
-							<h3>Holistic Energy Modeling and Analysis</h3>
-							<p>We take a holistic approach to energy modeling, considering not just local weather patterns, but also building design, occupancy patterns, and system efficiencies. Our detailed energy models incorporate multiple factors to provide a comprehensive analysis of your building's energy performance. This integrated approach results in actionable insights that optimize energy use across all aspects of your project.</p>
-						</article>
-						<article>
-							<h3>Energy-Efficient Design Solutions</h3>
-							<p>Our design solutions can reduce your energy bills by up to 50% through passive energy designs and other sustainable approaches. We focus on creating spaces that are not only cost-effective, environmentally responsible and enjoyable as well.</p>
-						</article>
+						
+						<div class="service left-image">
+							<div class="service-image">
+								<img src="images/energy_cost.jpg" alt="Energy Cost Reduction Strategy">
+							</div>
+							<div class="service-text">
+								<h3>Energy Cost Reduction Strategy</h3>
+								<p>We develop comprehensive strategies to minimize energy costs for new constructions and renovations. Our process begins with an in-depth consultation to understand your specific energy needs. If necessary, we analyze sensor data to gain deeper insights. Based on this information, we create a tailored strategy that outlines effective methods to significantly reduce your energy consumption and costs.</p>
+							</div>
+						</div>
+						
+						<div class="service right-image">
+							<div class="service-text">
+								<h3>Sustainable Architectural Design and 3D Drafting</h3>
+								<p>Our team specializes in creating environmentally conscious designs that significantly reduce energy consumption and carbon footprints. We integrate sustainable materials and innovative design strategies to help you build spaces that are both beautiful and eco-friendly. Our services include detailed 3D drafting, ensuring precise and accurate representations of your sustainable building projects.</p>
+							</div>
+							<div class="service-image">
+								<img src="images/sustainable_design.jpg" alt="Sustainable Architectural Design and 3D Drafting">
+							</div>
+						</div>
+						
+						<div class="service left-image">
+							<div class="service-image">
+								<img src="images/energy_modeling.jpg" alt="Holistic Energy Modeling and Analysis">
+							</div>
+							<div class="service-text">
+								<h3>Holistic Energy Modeling and Analysis</h3>
+								<p>We take a holistic approach to energy modeling, considering not just local weather patterns, but also building design, occupancy patterns, and system efficiencies. Our detailed energy models incorporate multiple factors to provide a comprehensive analysis of your building's energy performance. This integrated approach results in actionable insights that optimize energy use across all aspects of your project.</p>
+							</div>
+						</div>
+						
+						<div class="service right-image">
+							<div class="service-text">
+								<h3>Energy-Efficient Design Solutions</h3>
+								<p>Our design solutions can reduce your energy bills by up to 50% through passive energy designs and other sustainable approaches. We focus on creating spaces that are not only cost-effective, environmentally responsible and enjoyable as well.</p>
+							</div>
+							<div class="service-image">
+								<img src="images/energy_efficient.jpg" alt="Energy-Efficient Design Solutions">
+							</div>
+						</div>
 					</section>
 
 					<!-- Tile Section with Main Pictures -->
