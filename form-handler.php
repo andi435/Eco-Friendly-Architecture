@@ -15,12 +15,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Sanitize and validate input data
     $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
     $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
-    $message = filter_input(INPUT_POST, 'message', FILTER_SANITIZE_STRING);
-    
-    // Optional fields - check if they exist in the form
-    $subject = isset($_POST['subject']) ? filter_input(INPUT_POST, 'subject', FILTER_SANITIZE_STRING) : "No subject provided";
-    $service = isset($_POST['service']) ? filter_input(INPUT_POST, 'service', FILTER_SANITIZE_STRING) : "No service specified";
-    $project_details = isset($_POST['project_details']) ? filter_input(INPUT_POST, 'project_details', FILTER_SANITIZE_STRING) : $message;
+    $subject = filter_input(INPUT_POST, 'subject', FILTER_SANITIZE_STRING);
+    $service = filter_input(INPUT_POST, 'service', FILTER_SANITIZE_STRING);
+    $project_details = filter_input(INPUT_POST, 'project_details', FILTER_SANITIZE_STRING);
     
     // Validate email
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -28,26 +25,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     
     // Check for empty required fields
-    if (empty($name) || empty($email) || empty($message)) {
-        die("Please fill in all required fields (Name, Email, and Message).");
+    if (empty($name) || empty($email) || empty($subject) || empty($service)) {
+        die("Please fill in all required fields (Name, Email, Subject, and Service).");
     }
     
     // Prepare email content
     $email_content = "New website form submission:\n\n";
     $email_content .= "Name: $name\n";
     $email_content .= "Email: $email\n";
-    
-    // Add optional fields if they exist
-    if (isset($_POST['subject'])) {
-        $email_content .= "Subject: $subject\n";
-    }
-    
-    if (isset($_POST['service'])) {
-        $email_content .= "Service Required: $service\n";
-    }
-    
-    // Message/Project Details
-    $email_content .= "Message/Project Details:\n$message\n";
+    $email_content .= "Subject: $subject\n";
+    $email_content .= "Service Required: $service\n";
+    $email_content .= "Project Details:\n$project_details\n";
     
     // Prepare email headers
     $headers = "From: Verdi Studio Website <noreply@verdistudio.ca>\r\n";
