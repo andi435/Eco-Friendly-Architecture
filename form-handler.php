@@ -2,7 +2,7 @@
 // Configuration
 $recipient_email = "info@verdistudio.ca";
 $email_subject = "New Form Submission";
-$redirect_url = "thank-you.html"; // Redirect after successful submission
+$redirect_url = "index.html"; // Redirect after successful submission
 
 // Security configurations
 header('X-Content-Type-Options: nosniff');
