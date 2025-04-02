@@ -89,48 +89,22 @@
 							<p>Ready to transform your ideas into reality? Fill out the form below, and one of our specialists will contact you within 24 hours to discuss your project requirements.</p>
 							
 							<!-- Update the form action to your secure endpoint -->
-							<form method="post" action="https://verdi-studio.com/form-handler.php">
-								<div class="fields">
-									<div class="field half">
-										<label for="name">Name</label>
-										<input type="text" name="name" id="name" placeholder="Your Name" />
-									</div>
-									<div class="field half">
-										<label for="email">Email</label>
-										<input type="email" name="email" id="email" placeholder="Your Email" />
-									</div>
-									<div class="field">
-										<label for="subject">Subject</label>
-										<input type="text" name="subject" id="subject" placeholder="Project Subject" />
-									</div>
-									<div class="field">
-										<label for="service">Service Required</label>
-										<select name="service" id="service">
-											<option value="">- Select a Service -</option>
-											<option value="cad">Advanced CAD Modeling</option>
-											<option value="3d">3D Visualization & Rendering</option>
-											<option value="prototype">Prototype Development</option>
-											<option value="consultation">Design Consultation</option>
-											<option value="documentation">Technical Documentation</option>
-											<option value="other">Other (Please specify)</option>
-										</select>
-									</div>
-									<div class="field">
-										<label for="message">Project Details</label>
-										<textarea name="message" id="message" placeholder="Describe your project requirements, timeline, and goals"></textarea>
-									</div>
-									<div class="field">
-										<label class="checkbox">
-											<input type="checkbox" name="newsletter" id="newsletter">
-											Subscribe to our newsletter for design tips and industry insights
-										</label>
-									</div>
-								</div>
-								<ul class="actions">
-									<li><input type="submit" value="Send Message" class="primary" /></li>
-									<li><input type="reset" value="Clear Form" /></li>
-								</ul>
-							</form>
+							<form target="_blank" action="https://formsubmit.co/info@verdistudio.ca" method="POST">
+    <div class="form-group">
+      <div class="form-row">
+        <div class="col">
+          <input type="text" name="name" class="form-control" placeholder="Full Name" required>
+        </div>
+        <div class="col">
+          <input type="email" name="email" class="form-control" placeholder="Email Address" required>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <textarea placeholder="Your Message" class="form-control" name="message" rows="10" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-lg btn-dark btn-block">Submit Form</button>
+  </form>
 						</div>
 					</div>
 
